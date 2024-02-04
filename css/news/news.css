@@ -1,0 +1,145 @@
+@charset "UTF-8";
+.hamburger {
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 86px;
+  width: 100%;
+  align-items: center;
+  transition: all 0.3s;
+}
+.hamburger .title {
+  font-weight: bold;
+}
+.hamburger .logo {
+  line-height: 1;
+}
+.hamburger .nav-group {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 30px;
+  height: 100%;
+}
+.hamburger .nav-group li {
+  margin-right: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  position: relative;
+}
+.hamburger .nav-group li a::after {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: "";
+  transition: transform 0.3s;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  background-color: #fff;
+}
+.hamburger .nav-group li a:hover::after {
+  transform: scale(1, 1);
+}
+
+.open span:nth-child(1) {
+  background-image: url(../img/hero.jpg);
+  top: 6px;
+  transform: rotate(-45deg);
+}
+
+.open span:nth-child(2),
+.open span:nth-child(3) {
+  top: 6px;
+  background: #ffffff;
+  transform: rotate(45deg);
+}
+
+.headerColorScroll {
+  background-color: #21054d;
+}
+
+.fv {
+  background-image: url(../../img/hero.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 240px;
+  text-align: center;
+}
+.fv-content {
+  color: #ffffff;
+  text-align: center;
+  padding: 0 30px;
+}
+.fv-content .site-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+}
+.fv-content .sub-title {
+  margin-top: 20px;
+  letter-spacing: 0.1em;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+.fv .fv-content {
+  padding: 50px 40px 10px 40px;
+  text-align: center;
+}
+.fv .heading_title {
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 36px;
+  font-size: 2.25rem;
+}
+.fv .heading_sub {
+  margin-top: 5px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.breadcrumb {
+  background-color: #f0f0f0;
+  padding: 8px 0;
+}
+
+.breadcrumb_inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.breadcrumb li {
+  display: inline; /*横に並ぶように*/
+  list-style: none;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+.breadcrumb li:after { /* >を表示*/
+  content: ">";
+  padding: 0 0.2em;
+  color: #555;
+}
+
+.breadcrumb li:last-child:after {
+  content: "";
+}
+
+.breadcrumb li a {
+  text-decoration: none;
+  color: #555; /*色*/
+}
+
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=news.css.map */
