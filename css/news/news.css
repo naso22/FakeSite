@@ -48,6 +48,8 @@
 .open span:nth-child(1) {
   background-image: url(../img/hero.jpg);
   top: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -55,6 +57,8 @@
 .open span:nth-child(3) {
   top: 6px;
   background: #ffffff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 

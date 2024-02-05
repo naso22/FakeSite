@@ -125,6 +125,8 @@ body {
 .open span:nth-child(1) {
   background-image: url(../img/hero.jpg);
   top: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -132,6 +134,8 @@ body {
 .open span:nth-child(3) {
   top: 6px;
   background: #ffffff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -224,6 +228,9 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
+  -ms-writing-mode: tb-rl;
+  -ms-writing-mode: tb-lr;
+  -webkit-writing-mode: vertical-lr;
   writing-mode: vertical-lr;
   font-size: 12px;
   font-size: 0.75rem;
@@ -241,19 +248,27 @@ body {
 
 @keyframes scrollDownLine {
   0% {
+    -webkit-transform: scale(1, 0);
     transform: scale(1, 0);
+    -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
   }
   50% {
+    -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
+    -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
   }
   50.1% {
+    -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
+    -webkit-transform-origin: 0 100%;
     transform-origin: 0 100%;
   }
   100% {
+    -webkit-transform: scale(1, 0);
     transform: scale(1, 0);
+    -webkit-transform-origin: 0 100%;
     transform-origin: 0 100%;
   }
 }
@@ -264,7 +279,6 @@ body {
 #news .news-content {
   display: flex;
   margin: 0 auto;
-  width: -moz-fit-content;
   width: fit-content;
 }
 #news .news-content .news-list__heding {
@@ -331,6 +345,46 @@ body {
   padding: 60px 20px;
   position: relative;
 }
+
+.swiper {
+  width: 59.5238%;
+  margin-right: 30px;
+  z-index: 0;
+}
+
+.swiper-wrapper {
+  padding-bottom: 35px;
+}
+
+.swiper-button-next::after {
+  content: "\f105";
+}
+
+.swiper-button-prev::after {
+  content: "\f104";
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  position: absolute;
+  top: 50%;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 800;
+  display: block;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #391e88;
+  font-size: 32px;
+}
+
+.swiper-pagination {
+  bottom: 0;
+  text-align: right;
+}
+
+.swiper-pagination-bullet {
+  background-color: #391e88;
+}
+
 #works .works_inner::after {
   position: absolute;
   top: 50%;
@@ -343,64 +397,10 @@ body {
   transform: translateY(-50%);
   background-color: #f0f0f0;
 }
-#works .slide-items {
-  width: 59.5238%;
-  margin-right: 30px;
-}
-#works .slide-items img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
+
 #works .title {
   flex: 1;
   text-align: center;
-}
-#works .slick-arrow {
-  z-index: 20;
-  /* 矢印画像を最前面へ */
-}
-#works .slick-prev:before,
-#works .slick-next:before {
-  font-size: 40px;
-  line-height: 1;
-  color: #250d65;
-  font-weight: bolder;
-}
-#works .slick-next {
-  right: 10px;
-  z-index: 0;
-}
-#works .slick-prev {
-  left: 10px;
-  z-index: 0;
-}
-#works .slick-prev:before {
-  content: "<";
-}
-#works .slick-next:before {
-  content: ">";
-}
-#works .arrow-prev {
-  left: 10px;
-  /* 左矢印の位置 */
-}
-#works .arrow-next {
-  right: 10px;
-  /* 右矢印の位置 */
-}
-#works .slick-dots li button:before {
-  font-size: 10px !important;
-  color: #250d65;
-}
-#works .slick-dots li {
-  width: 10px !important;
-}
-#works .slick-dots {
-  text-align: end;
-}
-#works .slick-dots li {
-  margin: 0 3px;
 }
 
 #company {
@@ -523,7 +523,9 @@ footer ul {
     position: absolute;
     width: 40px;
     border-bottom: solid 2px #ffffff;
+    -webkit-transition: 0.35s ease-in-out;
     /*変化の速度を指定*/
+    -moz-transition: 0.35s ease-in-out;
     /*変化の速度を指定*/
     transition: 0.35s ease-in-out;
     /*変化の速度を指定*/
@@ -541,12 +543,16 @@ footer ul {
   .Toggle.active span:nth-child(1) {
     top: 18px;
     /* 1番目のspanをマイナス45度に */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
   /* 2番目と3番目のspanを45度に */
   .Toggle.active span:nth-child(2),
   .Toggle.active span:nth-child(3) {
     top: 18px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
     transform: rotate(45deg);
   }
   .nav.open {
@@ -620,6 +626,7 @@ footer ul {
     left: 0;
     width: 100%;
     height: 68%;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
   #works .works_inner .title {
